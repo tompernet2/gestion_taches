@@ -17,7 +17,4 @@ export default {
 </script>
 
 <style>
-h2 {
-  color: #42b983;
-}
 </style>

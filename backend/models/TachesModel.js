@@ -25,7 +25,7 @@ export const getTacheById=(id, result) => {
         })
 }
 
-export const insertTache=(data, result)=>{
+export const createTache=(data, result)=>{
     db.query("INSERT INTO taches SET ?", [data], (err, results) =>{
         if (err){
             console.log(err);

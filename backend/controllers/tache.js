@@ -1,6 +1,6 @@
-import { getTaches, getTacheById, insertTache, deleteTacheByID } from "../models/TachesModel.js";
+import { getTaches, getTacheById, createTache  ,deleteTacheByID} from "../models/TachesModel.js";
 
-export const showTaches=(req, res)=>{
+export const getTachesController=(req, res)=>{
     getTaches((err, results)=>{
         if (err){
             res.send(err)
@@ -10,7 +10,7 @@ export const showTaches=(req, res)=>{
     })
 }
 
-export const showTachesById=(req, res)=>{
+export const getTacheByIdController=(req, res)=>{
     getTacheById(req.params.id, (err, results)=>{
         if(err){
             res.send(err)
@@ -20,9 +20,9 @@ export const showTachesById=(req, res)=>{
     })
 }
 
-export const createTache = (req, res)=>{
+export const createTacheController = (req, res)=>{
     const data=req.body;
-    insertTache(data, (err,results)=>{
+    createTache(data, (err,results)=>{
         if(err){
             res.send(err)
         }else{
@@ -30,7 +30,7 @@ export const createTache = (req, res)=>{
         }
     })
 }
-export const deleteTache = (req, res)=>{
+export const deleteTacheByIDController = (req, res)=>{
     const id=req.params.id;
     deleteTacheByID(id, (err,results)=>{
         if(err){

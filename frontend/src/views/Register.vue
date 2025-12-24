@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import AddTache from '../components/AddTache.vue';
+import Register from '../components/Register.vue';
 
 export default {
-  name: "Create",
+  name: "Register",
   components: {
-    AddTache
+    Register
   }
 };
 </script>

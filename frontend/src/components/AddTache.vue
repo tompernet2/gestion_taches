@@ -1,13 +1,15 @@
 <template>
   <div>
     <div>
-      <label>Libelle Tache</label>
-      <input type="text" placeholder="Libelle" v-model="tacheLibelle" />
-      <label>Heure Début</label>
-      <input type="time" v-model="tacheHeureDebut" />
-      <label>Heure Fin</label>
-      <input type="time" v-model="tacheHeureFin" />
-      <button @click="saveTache">Créer une tache</button>
+      <form @submit.prevent="saveTache">
+        <label>Libelle Tache</label>
+        <input type="text" placeholder="Libelle" v-model="tacheLibelle" required/>
+        <label>Heure Début</label>
+        <input type="time" v-model="tacheHeureDebut" required />
+        <label>Heure Fin</label>
+        <input type="time" v-model="tacheHeureFin" required />
+        <button type="submit">Créer une tache</button>
+      </form>
     </div>
   </div>
 </template>

@@ -5,9 +5,9 @@
       <thead>
         <tr>
           <th>id</th>
-          <th>libelle</th>
-          <th>heure debut</th>
-          <th>heure fin</th>
+          <th>libelle<button @click="sortBy('libelle')">BTN libelle</button></th>
+          <th>heure debut <button @click="sortBy('heure_debut')">BTN Heure debut</button></th>
+          <th>heure fin <button @click="sortBy('heure_fin')">BTN Heure fin</button></th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -15,7 +15,7 @@
         <tr v-for="item in items" :key="item.id">
           <td>{{ item.id }}</td>
           <td>{{ item.libelle }}</td>
-          <td>{{ item.heure_debut }}</td>
+          <td>{{ item.heure_debut }} </td>
           <td>{{ item.heure_fin }}</td>
           <td><button @click="deleteTache(item.id)">Supprimer</button></td>
         </tr>
@@ -44,6 +44,17 @@ export default {
       } catch (err) {
         console.log(err);
       }
+    },
+    sortBy(param) {
+      this.items.sort((a, b) => {
+        if(a[param] > b[param]){
+          return 1;
+        }
+        if(a[param] < b[param]){
+          return -1;
+        }
+        return 0;
+      });
     },
     async deleteTache(id) {
       try {
