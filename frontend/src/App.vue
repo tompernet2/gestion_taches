@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="px-10 md:px-30 py-10 w-full" >
+    
     <router-view></router-view>
-    <!-- Ici s'affichent les pages selon la route -->
   </div>
 </template>
 
@@ -9,9 +9,5 @@
 </script>
 
 <style>
-#app {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-}
+
 </style>
