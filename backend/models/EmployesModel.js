@@ -1,7 +1,17 @@
 import db from "../config/database.js";
 import bcrypt from "bcrypt";
 
-export const createEmploye = async (data, result) => {
+export const getEmployes = (res) => {
+  db.query("SELECT * FROM employes", (err, results) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(results);
+    }
+  });
+};
+
+export const createEmploye = async (data, res) => {
   try {
     const passwordHash = await bcrypt.hash(data.password, 10);
 
@@ -12,17 +22,14 @@ export const createEmploye = async (data, result) => {
       prenom: data.prenom,
     };
 
-    db.query("INSERT INTO employes SET ?", [employe], (err, results) => {
+    db.query("INSERT INTO employes SET ?", employe, (err, results) => {
       if (err) {
-        console.log(err);
-        result(err, null);
+        res.send(err);
       } else {
-        result(null, results);
+        res.json(results);
       }
     });
   } catch (err) {
-    console.log(err);
-    result(err, null);
+    res.send(err);
   }
 };
-

@@ -1,42 +1,22 @@
-import { getTaches, getTacheById, createTache  ,deleteTacheByID} from "../models/TachesModel.js";
+import {
+  getTaches,
+  getTacheById,
+  createTache,
+  deleteTacheById,
+} from "../models/TachesModel.js";
 
-export const getTachesController=(req, res)=>{
-    getTaches((err, results)=>{
-        if (err){
-            res.send(err)
-        }else{
-            res.json(results)
-        }
-    })
-}
+export const getTachesController = (req, res) => {
+  getTaches(res);
+};
 
-export const getTacheByIdController=(req, res)=>{
-    getTacheById(req.params.id, (err, results)=>{
-        if(err){
-            res.send(err)
-        }else{
-            res.json(results)
-        }
-    })
-}
+export const getTacheByIdController = (req, res) => {
+  getTacheById(req.params.id, res);
+};
 
-export const createTacheController = (req, res)=>{
-    const data=req.body;
-    createTache(data, (err,results)=>{
-        if(err){
-            res.send(err)
-        }else{
-            res.json(results)
-        }
-    })
-}
-export const deleteTacheByIDController = (req, res)=>{
-    const id=req.params.id;
-    deleteTacheByID(id, (err,results)=>{
-        if(err){
-            res.send(err)
-        }else{
-            res.json(results)
-        }
-    })
-}
+export const createTacheController = (req, res) => {
+  createTache(req.body, res);
+};
+
+export const deleteTacheByIdController = (req, res) => {
+  deleteTacheById(req.params.id, res);
+};

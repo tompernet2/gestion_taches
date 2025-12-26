@@ -5,10 +5,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "App",
-};
+<script setup>
 </script>
 
 <style>

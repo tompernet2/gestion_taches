@@ -1,20 +1,11 @@
-<!-- src/views/Home.vue -->
 <template>
   <div>
-    <AddTache/>
+    <AddTache />
   </div>
 </template>
 
-<script>
-import AddTache from '../components/AddTache.vue';
-
-export default {
-  name: "Create",
-  components: {
-    AddTache
-  }
-};
+<script setup>
+import AddTache from '../components/AddTache.vue'
 </script>
 
-<style>
-</style>
+<style></style>

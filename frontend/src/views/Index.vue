@@ -1,20 +1,11 @@
-<!-- src/views/Home.vue -->
 <template>
   <div>
-    <TachesList/>
+    <TachesList />
   </div>
 </template>
 
-<script>
-import TachesList from '../components/TachesList.vue';
-
-export default {
-  name: "Index",
-  components: {
-    TachesList
-  }
-};
+<script setup>
+import TachesList from '../components/TachesList.vue'
 </script>
 
-<style>
-</style>
+<style></style>
